@@ -21,6 +21,43 @@ right: alert, You found the gold! You walk into a small room and see thousands o
 
 The ghost of Captain Chingadera has condemned you to eternal damnation and you shall now burn in the hot excoriation for lifeless lowlifes for not choosing the correct option.
 
-6.	The game is now over. Ask the user to rate the game between 1 and 10. If the user enters a number not between 1 and 10, thank the user for playing and end the game, If the user enters a number between 6 and 10, thank the user and ask them to play again. If the user enters a number between 1 and 5, thank the user and tell them that you are working hard to improve the game. 
+6.	The game is now over. Ask the user to rate the game between 1 and 10. 
+If the user enters a number not between 1 and 10, 
+thank the user for playing and end the game, 
+
+If the user enters a number between 6 and 10, thank the user and ask them to play again.
+If the user enters a number between 1 and 5, thank the user and tell them that you are working hard to improve the game. 
 
 */
+
+let greeting = prompt('Are you ready to play? say \'yes\'');
+let direction;
+let grade;
+
+if (greeting == 'yes' ){
+  alert('You are in a dark, dingy, and humid cave searching for the lost treasure of Captain Chingadera. You are disoriented, lost, hungry and extremely thirsty. You see a speck of light in the distance ahead of you, something shimmering to your right, and the sound of running water to your left. Your back is against the wall.');
+  direction = prompt('Which direction would you like to head (please enter forward, left, or right).');
+  switch (direction) {
+    case 'forward':
+      console.log('alert, You walk 100 yards and safely make your way out of the cave.')
+      break
+    case 'left':
+      console.log('alert, Your thirst has gotten the better of you. You trip on a rock, hit your head, and fall into a pool of water and drown!')
+      break
+    case 'right':
+      console.log('alert, You found the gold! You walk into a small room and see thousands of gold coins, jewels, chalices, and more. You jump into the pile of gold in celebration and immediately a hidden door slams down and traps you in the room forever!')
+      break   
+    default: 
+      alert('The ghost of Captain Chingadera has condemned you to eternal damnation and you shall now burn in the hot excoriation for lifeless lowlifes for not choosing the correct option.');
+  }
+  grade = Number(prompt('Thank you for playing and grade us 1 to 10!'));
+  if (grade < 6){
+    alert('thank you and we will hard to improve the game');
+  } else if (grade <= 10){
+    alert('thank you and try again!');
+  }else {
+    alert('thank the user for playing and end the game');
+  }
+}else {
+  alert('thank you for visiting! see you again');
+}
